@@ -6,3 +6,11 @@
 
 '''
 
+
+list1 = ['hello', 'python', 'интерпретатор', 'pep8', "123"]
+
+list2 = [*map(len, list1)]
+
+list3 = list(map(len, list1))
+
+print(list2, list3)

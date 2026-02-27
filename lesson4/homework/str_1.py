@@ -8,3 +8,27 @@
 
 '''
 
+
+s = 'qAqqq qUqqEq qqqUqqq qqAAA'.lower()
+
+vowels = 'aeiou'
+
+# 3 разных варианта
+s1 = sum([s.count(i) for i in vowels])
+s2 = sum(map(s.count, vowels))
+s3 = len([*filter(lambda x: x in vowels, s)])
+
+print("Символов:", len(s))
+print("Слов:", len(s.split()))
+print("Гласных", s1, s2, s3)
+
+
+# --------------еще 1 вариант через замену
+
+# s = input('Введите фразу: ').lower()
+# l = {"а":"","е":"","ё":"","и":"","о":"",
+#      "у":"","ы":"","э":"","ю":"","я":""}
+# s2 = s.translate(s.maketrans(l))
+# print(f'Количество гласных: {len(s) - len(s2)}')
+
+

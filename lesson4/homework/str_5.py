@@ -6,3 +6,9 @@
 
 '''
 
+
+user_name = input("Введите ваше имя: ")
+sample = "Юзер с именем <имя> заходил на сайт в 15:00"
+result = sample.replace("<имя>", user_name)
+
+print(result)

@@ -20,3 +20,7 @@ some_list = [111, 222, 333, 444, 555, 666, 777, 888, 999].
 не использовать for и lambda
 
 '''
+
+some_list = [111, 222, 333, 444, 555, 666, 777, 888, 999]
+res = '---'.join(map('-'.join, map(str, some_list)))
+print(res)

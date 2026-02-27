@@ -8,3 +8,6 @@
     (решить без for)
     
 '''
+
+num = int(input('Введите число: '))
+print (f"{num} -> {num:,}".replace(","," "))

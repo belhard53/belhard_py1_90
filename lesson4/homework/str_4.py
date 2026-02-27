@@ -14,3 +14,26 @@
 
 
 
+s = "имя: Дмитрий, фамилия: Иванов, возраст: 18"
+
+elements = s.split(', ')
+
+name = elements[0].split(':')[1]
+surname = elements[1].split(':')[1]
+age = elements[2].split(':')[1]
+
+print('-', end='')
+print(name, surname, age, sep='\n-')
+
+
+
+# -------------------------2
+s = "имя: Дмитрий: фамилия: Иванов: возраст: 18"
+name, surname, age = s.replace(",",":").split(': ')[1::2]
+print(name, surname, age, sep="\n")
+
+""" or 
+name = s.split(": ")[1].split(",")[0]
+surname = s.split(": ")[2].split(",")[0]
+age = s.split(": ")[3]
+"""
