@@ -8,3 +8,12 @@
 
 
 
+
+
+a = int(input('Введите число: '))
+
+
+divider = 7 if a<=20 else 11
+count = a // divider + 1 
+
+print(f'Количество целочисленных делений: {count}')

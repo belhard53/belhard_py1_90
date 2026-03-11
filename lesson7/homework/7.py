@@ -6,3 +6,16 @@
 """
 
 
+
+nums = "236" or (input("Введите число не менее 10: "))
+
+if nums.isdigit() and int(nums) > 10:
+    num = list(nums)
+    formula = ' + '.join(f"{d}*{d}" for d in num)
+    sum_sq = sum(int(d) ** 2 for d in num)
+    print(f"Нам дано число {nums} ==> {formula} = {sum_sq}")
+else:
+    print("Введите число больше 10!")
+
+# ------ 2 ---------------
+print(sum(int(d) ** 2 for d in "236"))

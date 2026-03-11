@@ -10,3 +10,11 @@
     - вывести сумму всех товаров
 
 """
+
+
+count = 3
+items = [input(f"{i+1}: ").split() for i in range(count)]
+items = {item[0]:int(item[1]) for item in items}
+# или тоже но в 1 строку
+# items = {item[0]:int(item[1])for item in [input(f"{i+1}: ").split() for i in range(count)]}
+print(items)

@@ -7,3 +7,11 @@
 
 '''
 
+
+s = "Привет как дела".split()
+
+s1 = ' '.join(map(lambda word: ''.join([char*i for i, char in enumerate(word, 1)]),s))
+s2 = ' '.join(''.join(char * i for i, char in enumerate(word, 1)) for word in s)
+
+print(s1)
+print(s2)

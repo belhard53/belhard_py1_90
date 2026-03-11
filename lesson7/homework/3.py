@@ -5,3 +5,10 @@
 Например: 13520 -> bdfca.
 '''
 
+
+alphab = ord("a")
+
+nums = input("Введите число: ")
+
+for el in nums:
+    print(chr(int(el) + alphab), end="")

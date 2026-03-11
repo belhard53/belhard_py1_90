@@ -8,3 +8,11 @@
 в остальных случаях - "доступ запрещен".
 
 '''
+
+login, password, age = input('Enter login pass age: ').split() or ['','','']
+if (login == 'admin' and password == '123456' or 
+	login == 'vasya' and password == 'vas123' and int(age) < 60 or 
+	login == 'guest' and age > 18):
+	print('Доступ разрешен')
+else: 
+	print('Доступ запрещен')

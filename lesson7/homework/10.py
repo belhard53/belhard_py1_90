@@ -18,3 +18,44 @@ eval() exec() нельзя
 """
 
 
+
+while True:
+    user_input = input("\nВведите пример или 'стоп' для завершения: ").lower()
+
+    if user_input == "стоп":
+        print("Вы вышли из калькулятора!")
+        break
+
+    try:
+        parts = user_input.split()
+
+        if len(parts) != 3:
+            raise ValueError("Неверное количество элементов")
+
+        a, op, b = parts
+        a = float(a)
+        b = float(b)
+
+        if op == '+':
+            res = a + b
+        elif op == '-':
+            res = a - b
+        elif op == '*':
+            res = a * b
+        elif op == '/':
+            if b == 0:
+                print("Ошибка: деление на ноль!")
+                continue
+            res = a / b
+        elif op == '**':
+            res = a ** b
+        else:
+            print("Ошибка: неизвестная операция")
+            continue
+
+        print(f"Ответ: {res:.2f}")
+
+    except ValueError:
+        print("Неправильный формат. Пример: '2 + 4'")
+    except Exception as e:
+        print("Ошибка ввода или вычисления:", e)
