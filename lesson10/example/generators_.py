@@ -1,9 +1,32 @@
-a = [i**2 for i in range(10)]
-b = (i**2 for i in range(10))
+a = [i**10 for i in range(1_000_000)]
+b = (i**10 for i in range(1_000_000))
 
-# print(a.__sizeof__())
-# print(b.__sizeof__())
+print(a.__sizeof__())
+print(b.__sizeof__())
 
+import timeit
+print('---')
+print(timeit.timeit('for _ in a:pass', number=100, globals={'a':a})) 
+print(timeit.timeit('for _ in b:pass', number=100, globals={'b':b})) 
+
+print('---')
+b = (i**10 for i in range(1_000_000))
+print(timeit.timeit('sum(a)', number=100, globals={'a':a})) 
+print(timeit.timeit('sum(b)', number=100, globals={'b':b})) 
+
+print('---')
+b = (i**10 for i in range(1_000_000))
+print(timeit.timeit('any(a)', number=100000, globals={'a':a})) 
+print(timeit.timeit('any(b)', number=100000, globals={'b':b})) 
+
+print('---')
+print(timeit.timeit('sum([x for x in range(1_000_000)])', number=100)) 
+print(timeit.timeit('sum(x for x in range(1_000_000))', number=100)) 
+
+# -------------
+
+# a = [i**2 for i in range(10)]
+# b = (i**2 for i in range(10))
 # print(type(a), type(b))
 
 # for i in a:
@@ -80,27 +103,27 @@ b = (i**2 for i in range(10))
 # -----------------------------
 
 
-def ping():
-    yield "ping1"
-    yield "ping2"
-    yield "ping3"
+# def ping():
+#     yield "ping1"
+#     yield "ping2"
+#     yield "ping3"
 
-def main():
-    yield "start"
-    yield from ping()
-    yield "end"
+# def main():
+#     yield "start"
+#     yield from ping()
+#     yield "end"
 
-# for x in main():
-#     print(x)
+# # for x in main():
+# #     print(x)
     
-    # ------------------
+#     # ------------------
     
-def f1():
-    yield from "QWER"
-    yield from range(1, 5)
-    yield from ping()
+# def f1():
+#     yield from "QWER"
+#     yield from range(1, 5)
+#     yield from ping()
     
-for i in f1():
-    print(i)
+# for i in f1():
+#     print(i)
 
     
