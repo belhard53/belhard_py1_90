@@ -1,0 +1,6 @@
+
+для создания exe файла в терминале устанавливаем pyinstaller
+    pip install pyinstaller
+
+потом в терминале пишем команду
+    pyinstaller --onefile --windowed your_script.py

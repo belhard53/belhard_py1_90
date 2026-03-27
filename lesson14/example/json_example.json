@@ -1,0 +1,32 @@
+[
+{
+    "name": "Иван",
+    "age": 25,
+    "skills": [
+      "Python",
+      "Django",
+      "Linux"
+    ],
+    "active": true,
+    "salary": 150000.5,
+    "address": {
+      "city": "Москва",
+      "street": "Ленина, 10"
+    }
+},
+{
+    "name": "Иван",
+    "age": 25,
+    "skills": [
+      "Python",
+      "Django",
+      "Linux"
+    ],
+    "active": true,
+    "salary": 150000.5,
+    "address": {
+      "city": "Москва",
+      "street": "Ленина, 10"
+    }
+}
+]  
