@@ -11,6 +11,8 @@ class User(BaseModel):
     fname: str
     lname: str
     age: int
+    
+    
 
 with open(csv_file) as f:
     reader = BasemodelCSVReader(f, User)

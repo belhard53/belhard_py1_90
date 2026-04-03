@@ -30,72 +30,73 @@ with Session(autoflush=False, bind=engine) as db:
     add_data(engine, db) 
     
     # # ------  CREATE  ----
-    # user = User(fname='User1', lname="Userovich1", age=32, gender='Male')
-    # phone = PhoneNumber('23456789', 'mts')
-    # user.phones.append(phone)
-    # db.add(user)
+    user = User(fname='User1', lname="Userovich1", age=32, gender='Male')
+    phone = PhoneNumber('23456789', 'mts')
+    user.phones.append(phone)
+    db.add(user)
     
-    # user = User(fname='User2', lname="Userovich2", age=32, gender='Male')
-    # user.phones.append(PhoneNumber('23456789', 'mts'))
-    # db.add(user)
+    user = User(fname='User2', lname="Userovich2", age=32, gender='Male')
+    user.phones.append(PhoneNumber('23456789', 'mts'))
+    db.add(user)
     
-    # db.add(User(fname='User3', lname="Userovich3", age=32, gender='Male'))
+    db.add(User(fname='User3', lname="Userovich3", age=32, gender='Male'))
     
-    # db.commit() # сохраняем все изменения
+    db.commit() # сохраняем все изменения
     
     
     # # ------  READ  ----
-    # users = db.query(User).all()
-    # for user in users:
-    #     print(user.fname, user.age)
+    users = db.query(User).all()
+    for user in users:
+        print(user.fname, user.age)
+        # print(user)
     
-    # user = db.get(User, 1) 
-    # print(user)   
-    # print(user.phones[0].number) 
-    # for ph in user.phones:
-    #     print(ph.number)  
+    user = db.get(User, 1) 
+    print(user)   
+    print(user.phones[0].number) 
+    for ph in user.phones:
+        print(ph.number)  
     
     
-    # user = db.query(User).filter_by(id=2).one()    
-    # users = db.query(User).filter(User.id>3).all()
+    user = db.query(User).filter_by(id=2).one()    
+    users = db.query(User).filter(User.id>3).all()
     
-    # from sqlalchemy import or_
-    # users = db.query(User).filter(or_(User.fname=='Max1', User.fname=='Max2')).all()
-    # print(users)
+    from sqlalchemy import or_
+    users = db.query(User).filter(or_(User.fname=='Max1', User.fname=='Max2')).all()
+    print(users)
     
-    # users = db.query(User).filter(User.fname.like(r'%ax6%')).all()
+    users = db.query(User).filter(User.fname.like(r'%ax6%')).all()
     # print(users)
     
     
     # # ------  UPDATE  ----
-    # user = db.get(User, 1)    
-    # user.fname = "Gerald"
-    # user.phones.append(PhoneNumber('12345678', 'mts'))       
-    # user.phones[0].number = '99999999'
-    # db.commit()
+    user = db.get(User, 1)    
+    user.fname = "Gerald"
+    user.phones.append(PhoneNumber('12345678', 'mts'))       
+    user.phones[0].number = '99999999'
+    db.commit()
     
-    # user = db.get(User, 1)    
-    # print(user)
-    # print(*user.phones, sep='\n')
+    user = db.get(User, 1)    
+    print(user)
+    print(*user.phones, sep='\n')
     
     
     
     # # ------  DELETE  ----    
-    # user = db.get(User, 1)    
-    # db.delete(user)    
-    # db.commit()
+    user = db.get(User, 1)    
+    db.delete(user)    
+    db.commit()
     
-    # user = db.get(User, 6)    
-    # print(user.phones)
-    # user.phones.pop()
-    # print(user.phones)
+    user = db.get(User, 6)    
+    print(user.phones)
+    user.phones.pop()
+    print(user.phones)
     
     
-    # user = db.get(User, 7)    
-    # print(user.phones)
-    # phone = user.phones[0]
-    # user.phones.remove(phone)
-    # print(user.phones)
+    user = db.get(User, 7)    
+    print(user.phones)
+    phone = user.phones[0]
+    user.phones.remove(phone)
+    print(user.phones)
     
     
     

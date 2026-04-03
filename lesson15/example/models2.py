@@ -27,7 +27,16 @@ class User(Base):
     gender = Column(Enum('Male', 'Female', name='gender'), nullable=False)
     age = Column(Integer, nullable=False)
     
-    phones = relationship('PhoneNumber', backref='user')
+    # phones = relationship('PhoneNumber', backref='user')
+    phones = relationship('PhoneNumber', backref='user', lazy='select')
+    
+            # lazy:
+            # 'select'	Лениво при первом доступе	N+1 проблема!	Неизвестно, нужны ли номера
+            # 'joined'	JOIN сразу с родителем	1 запрос	Всегда нужны номера
+            # 'subquery'	Подзапрос отдельно	2 запроса	Много родителей
+            # 'dynamic'	Query объект (НЕ список)	1 при запросе	Фильтрация номеров
+            # 'noload'	НЕТ загрузки	0 запросов	Никогда не нужны
+            # 'raise'	Ошибка при доступе	Ошибка!	Отладка N+1
     
     
     # def __init__(self, name, **kw):
